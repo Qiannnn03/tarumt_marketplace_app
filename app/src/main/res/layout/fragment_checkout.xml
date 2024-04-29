@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CheckoutFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/opensans"
+            android:gravity="center"
+            android:text="Checkout"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <!-- Delivery Address -->
+    <TextView
+        android:id="@+id/delivery_address_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Delivery address"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+
+    <!-- Location Icon -->
+    <ImageView
+        android:id="@+id/home_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delivery_address_label" />
+
+    <!-- Home label -->
+    <TextView
+        android:id="@+id/home_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="Home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/home_icon"
+        app:layout_constraintTop_toBottomOf="@id/delivery_address_label" />
+
+
+    <TextView
+        android:id="@+id/delivery_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="925 S Chugach St #APT 10, Alaska 99645"
+        app:layout_constraintStart_toStartOf="@id/home_label"
+        app:layout_constraintTop_toBottomOf="@id/home_label" />
+
+    <TextView
+        android:id="@+id/change_address_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/change_text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider" />
+
+
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delivery_address"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+
+    <!-- Product Section -->
+    <TextView
+        android:id="@+id/product_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Product"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_label"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Regular Fit Slogan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@id/product_image"
+        app:layout_constraintTop_toTopOf="@id/product_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/product_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Clothes"
+        app:layout_constraintStart_toStartOf="@id/productName"
+        app:layout_constraintTop_toBottomOf="@id/productName"
+        app:layout_constraintEnd_toEndOf="@id/productName"/>
+
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="RM 1,190"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@id/product_category"
+        app:layout_constraintTop_toBottomOf="@id/product_category"
+        app:layout_constraintEnd_toEndOf="@id/product_category"
+        android:layout_marginTop="8dp"/>
+
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_price"
+        android:layout_marginTop="30dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/order_summary_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="Order Summary"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+
+
+    <!-- Sub-total Label -->
+    <TextView
+        android:id="@+id/subtotal_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sub-total"
+        app:layout_constraintStart_toStartOf="@+id/order_summary_label"
+        app:layout_constraintEnd_toStartOf="@+id/subtotal_value"
+        app:layout_constraintTop_toBottomOf="@+id/order_summary_label"
+
+        android:layout_marginTop="16dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_bias="0" />
+
+    <!-- Sub-total Value -->
+    <TextView
+        android:id="@+id/subtotal_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RM 5000"
+        app:layout_constraintStart_toEndOf="@+id/subtotal_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/subtotal_label"
+        android:layout_marginEnd="16dp" />
+
+
+
+    <!-- SST Label -->
+    <TextView
+        android:id="@+id/sst_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SST (%)"
+        app:layout_constraintStart_toStartOf="@+id/subtotal_label"
+        app:layout_constraintEnd_toStartOf="@+id/sst_value"
+        app:layout_constraintTop_toBottomOf="@+id/subtotal_label"
+        android:layout_marginTop="8dp" />
+
+    <!-- SST Value -->
+    <TextView
+        android:id="@+id/sst_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RM0.00"
+        app:layout_constraintStart_toEndOf="@+id/sst_label"
+        app:layout_constraintEnd_toEndOf="@+id/subtotal_value"
+        app:layout_constraintTop_toTopOf="@+id/sst_label" />
+
+
+
+    <!-- Shipping Fee Label -->
+    <TextView
+        android:id="@+id/shipping_fee_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Shipping fee"
+        app:layout_constraintStart_toStartOf="@+id/sst_label"
+        app:layout_constraintEnd_toStartOf="@+id/shipping_fee_value"
+        app:layout_constraintTop_toBottomOf="@+id/sst_label"
+        android:layout_marginTop="8dp" />
+
+    <!-- Shipping Fee Value -->
+    <TextView
+        android:id="@+id/shipping_fee_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RM 80"
+        app:layout_constraintStart_toEndOf="@+id/shipping_fee_label"
+        app:layout_constraintEnd_toEndOf="@+id/sst_value"
+        app:layout_constraintTop_toTopOf="@+id/shipping_fee_label" />
+
+    <!-- Summary Line -->
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="@+id/shipping_fee_label"
+        app:layout_constraintEnd_toEndOf="@+id/shipping_fee_value"
+        app:layout_constraintTop_toBottomOf="@+id/shipping_fee_label"
+        android:layout_marginTop="16dp" />
+
+    <!-- Total Label -->
+    <TextView
+        android:id="@+id/total_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/divider3"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        android:layout_marginTop="8dp" />
+
+    <!-- Total Value -->
+    <TextView
+        android:id="@+id/total_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="RM5,950"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/divider3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/total_label"
+        app:layout_constraintTop_toTopOf="@+id/total_label" />
+
+
+    <Button
+        android:id="@+id/btnStripe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="60dp"
+        android:text="Pay with Stripe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_value" />
+
+    <Button
+        android:id="@+id/pay_cash_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Pay with Cash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStripe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
